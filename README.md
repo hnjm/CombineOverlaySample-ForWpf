@@ -4,7 +4,7 @@
 
 In today’s Wpf project, we show a technique of using a common FeatureSource for two different Overlays. From a physical shapefile representing cities, a regular LayerOverlay is used for the higher zoom levels while a FeatureSourceMarkerOverlay is used for the lower zoom levels. FeatureSourceMarkerOverlay is a Wpf specific overlay offering features for a better user experience such a Tooltips and ImageSource.              
 
-Please refer to [Wiki](http://wiki.thinkgeo.com/wiki/map_suite_desktop_for_wpf) for the details.
+Please refer to [Wiki](System.String[]) for the details.
 
 ![Screenshot](https://github.com/ThinkGeo/CombineOverlaySample-ForWpf/blob/master/ScreenShot.png)
 
