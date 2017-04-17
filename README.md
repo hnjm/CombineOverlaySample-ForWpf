@@ -1,4 +1,4 @@
-# Combine Overlay Sample
+# Combine Overlay Sample for Wpf
 
 ### Description
 
