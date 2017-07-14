@@ -15,9 +15,15 @@ This sample makes use of the following NuGet Packages
 [MapSuite 10.0.0](https://www.nuget.org/packages?q=ThinkGeo)
 
 ### About the Code
+```csharp
+LayerOverlay layerOverlay = new LayerOverlay();
+layerOverlay.Layers.Add(shapeFileFeatureLayer);
+wpfMap1.Overlays.Add(layerOverlay);
 
-Working...
-
+FeatureSourceMarkerOverlay markerOverlay = new FeatureSourceMarkerOverlay();
+ShapeFileFeatureSource shapeFileFeatureSource = (ShapeFileFeatureSource)shapeFileFeatureLayer.FeatureSource;
+markerOverlay.FeatureSource = shapeFileFeatureSource;
+```
 ### Getting Help
 
 [Map Suite Desktop for Wpf Wiki Resources](http://wiki.thinkgeo.com/wiki/map_suite_desktop_for_wpf)
@@ -31,7 +37,9 @@ Working...
 ### Key APIs
 This example makes use of the following APIs:
 
-Working...
+- [ThinkGeo.MapSuite.Wpf.LayerOverlay](http://wiki.thinkgeo.com/wiki/api/thinkgeo.mapsuite.wpf.layeroverlay)
+- [ThinkGeo.MapSuite.Wpf.FeatureSourceMarkerOverlay](http://wiki.thinkgeo.com/wiki/api/thinkgeo.mapsuite.wpf.featuresourcemarkeroverlay)
+- [ThinkGeo.MapSuite.Layers.ShapeFileFeatureSource](http://wiki.thinkgeo.com/wiki/api/thinkgeo.mapsuite.layers.shapefilefeaturesource)
 
 ### About Map Suite
 Map Suite is a set of powerful development components and services for the .Net Framework.
