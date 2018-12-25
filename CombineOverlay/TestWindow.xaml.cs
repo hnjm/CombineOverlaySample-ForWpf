@@ -65,7 +65,7 @@ namespace CombiningOverlays
             Point point = e.MouseDevice.GetPosition(null);
             
             ScreenPointF screenPointF = new ScreenPointF((float)point.X, (float)point.Y);
-            PointShape pointShape = ExtentHelper.ToWorldCoordinate(wpfMap1.CurrentExtent, screenPointF, (float)wpfMap1.Width, (float)wpfMap1.Height);
+            PointShape pointShape = ExtentHelper.ToWorldCoordinate(wpfMap1.CurrentExtent, screenPointF, (float)wpfMap1.ActualWidth, (float)wpfMap1.ActualHeight);
 
             textBox1.Text = "X: " + Math.Round(pointShape.X) + 
                           "  Y: " + Math.Round(pointShape.Y);
