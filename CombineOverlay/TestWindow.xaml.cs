@@ -26,11 +26,11 @@ namespace CombiningOverlays
             //Sets the correct map unit and the extent of the map.
             wpfMap1.MapUnit = GeographyUnit.Meter;
             wpfMap1.ZoomLevelSet = ThinkGeoCloudMapsOverlay.GetZoomLevelSet();
-            wpfMap1.CurrentExtent = new RectangleShape(-14607343.5818934, 7371576.14679691, -6014592.08756057, 1910351.0222467);
+            wpfMap1.CurrentExtent = new RectangleShape(-17981557.3116396, 10521096.5891449, -2640378.35781428, -1239169.42010131);
 
-            // Add ThinkGeoCloudMapsOverlay as basemap
-            ThinkGeoCloudMapsOverlay baseOverlay = new ThinkGeoCloudMapsOverlay();
-            wpfMap1.Overlays.Add(baseOverlay);
+            //Adds the WorldMapKit as a background.
+            ThinkGeoCloudMapsOverlay backgroundOverlay = new ThinkGeoCloudMapsOverlay();
+            wpfMap1.Overlays.Add(backgroundOverlay);
 
             //Adds the Shapefile MajorCities as a ShapeFileFeatureLayer between zoom levels 01 and 04.
             ShapeFileFeatureLayer shapeFileFeatureLayer = new ShapeFileFeatureLayer(@"..\..\Data\MajorCities.shp");
@@ -55,7 +55,7 @@ namespace CombiningOverlays
             markerOverlay.ZoomLevelSet.ZoomLevel03.DefaultPointMarkerStyle.ToolTip = "This is [#AREANAME#].";
             markerOverlay.ZoomLevelSet.ZoomLevel03.ApplyUntilZoomLevel = ApplyUntilZoomLevel.Level20;
 
-            wpfMap1.Overlays.Add("MarkerOverlay", markerOverlay);   
+            wpfMap1.Overlays.Add("MarkerOverlay", markerOverlay);
 
             wpfMap1.Refresh();
         }
@@ -64,13 +64,13 @@ namespace CombiningOverlays
         {
             //Gets the PointShape in world coordinates from screen coordinates.
             Point point = e.MouseDevice.GetPosition(null);
-            
+
             ScreenPointF screenPointF = new ScreenPointF((float)point.X, (float)point.Y);
             PointShape pointShape = ExtentHelper.ToWorldCoordinate(wpfMap1.CurrentExtent, screenPointF, (float)wpfMap1.ActualWidth, (float)wpfMap1.ActualHeight);
 
-            textBox1.Text = "X: " + Math.Round(pointShape.X) + 
+            textBox1.Text = "X: " + Math.Round(pointShape.X) +
                           "  Y: " + Math.Round(pointShape.Y);
 
-           }
         }
+    }
 }
