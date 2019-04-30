@@ -25,11 +25,15 @@ namespace CombiningOverlays
         {
             //Sets the correct map unit and the extent of the map.
             wpfMap1.MapUnit = GeographyUnit.Meter;
-            wpfMap1.ZoomLevelSet = ThinkGeoCloudMapsOverlay.GetZoomLevelSet();
+            wpfMap1.ZoomLevelSet = new ThinkGeoCloudMapsZoomLevelSet();
             wpfMap1.CurrentExtent = new RectangleShape(-17981557.3116396, 10521096.5891449, -2640378.35781428, -1239169.42010131);
 
-            //Adds the WorldMapKit as a background.
-            ThinkGeoCloudMapsOverlay backgroundOverlay = new ThinkGeoCloudMapsOverlay();
+            /*===========================================
+               Backgrounds for this sample are powered by ThinkGeo Cloud Maps and require
+               a Client ID and Secret. These were sent to you via email when you signed up
+               with ThinkGeo, or you can register now at https://cloud.thinkgeo.com.
+            ===========================================*/
+            ThinkGeoCloudRasterMapsOverlay backgroundOverlay = new ThinkGeoCloudRasterMapsOverlay();
             wpfMap1.Overlays.Add(backgroundOverlay);
 
             //Adds the Shapefile MajorCities as a ShapeFileFeatureLayer between zoom levels 01 and 04.
