@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*===========================================
+    Backgrounds for this sample are powered by ThinkGeo Cloud Maps and require
+    a Client ID and Secret. These were sent to you via email when you signed up
+    with ThinkGeo, or you can register now at https://cloud.thinkgeo.com.
+===========================================*/
+
+using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -28,12 +34,8 @@ namespace CombiningOverlays
             wpfMap1.ZoomLevelSet = new ThinkGeoCloudMapsZoomLevelSet();
             wpfMap1.CurrentExtent = new RectangleShape(-17981557.3116396, 10521096.5891449, -2640378.35781428, -1239169.42010131);
 
-            /*===========================================
-               Backgrounds for this sample are powered by ThinkGeo Cloud Maps and require
-               a Client ID and Secret. These were sent to you via email when you signed up
-               with ThinkGeo, or you can register now at https://cloud.thinkgeo.com.
-            ===========================================*/
-            ThinkGeoCloudRasterMapsOverlay backgroundOverlay = new ThinkGeoCloudRasterMapsOverlay();
+            // Please input your ThinkGeo Cloud Client ID / Client Secret to enable the background map. 
+            ThinkGeoCloudRasterMapsOverlay backgroundOverlay = new ThinkGeoCloudRasterMapsOverlay("ThinkGeo Cloud Client ID", "ThinkGeo Cloud Client Secret");
             wpfMap1.Overlays.Add(backgroundOverlay);
 
             //Adds the Shapefile MajorCities as a ShapeFileFeatureLayer between zoom levels 01 and 04.
